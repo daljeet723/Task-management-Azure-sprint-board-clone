@@ -1,0 +1,60 @@
+/* Reset some default browser styles */
+body, html {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .header {
+    background-color: #F5F5F5;
+    padding: 1rem;
+    margin-left: 10rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    box-sizing: border-box;
+    border-bottom: 0.1rem #D3D3D3 solid;
+    position: relative; /* Add position relative to create a stacking context */
+  }
+  
+  .tagline {
+    font-size: 1.8rem;
+    margin-bottom: 1.2rem;
+    font-weight: 800;
+  }
+  
+  .nav-list {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .nav-item {
+    font-size: 1.2rem;
+    cursor: pointer;
+    position: relative; /* Add position relative for absolute positioning of pseudo-element */
+  }
+  
+  .nav-item:hover {
+    color: royalblue;
+    padding-bottom: 0.5rem;
+  }
+  
+  /* Pseudo-element for highlight effect */
+  .nav-item::after {
+    content: '';
+    position: absolute;
+    bottom: -4px; /* Adjust to the desired position below the nav item */
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: royalblue;
+    transform: scaleX(0); /* Initially hide the highlight */
+    transition: transform 0.3s ease; /* Add transition for smooth effect */
+  }
+  
+   .nav-item:hover::after {
+    transform: scaleX(1); /* Show the highlight on hover */
+  }
+  
